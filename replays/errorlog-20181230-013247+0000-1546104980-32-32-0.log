@@ -1,0 +1,26 @@
+
+Turn 390
+================================================================
+warning: owned entities 1, 71, 61 collided on cell (12, 0) as the result of moves on this turn
+At command 2 of 7:
+    1   m 73 n
+>>> 2   m 1 w
+    3   m 18 n
+    4   m 71 e
+
+Other commands that placed an entity on this cell:
+    2   m 1 w
+    3   m 18 n
+>>> 4   m 71 e
+    5   m 17 s
+    6   m 32 w
+
+
+Turn 394
+================================================================
+warning: owned entities 17, 73 collided on cell (8, 16) as the result of moves on this turn
+At command 1 of 4:
+>>> 1   m 17 s
+    2   m 18 n
+    3   m 32 w
+

@@ -1,0 +1,39 @@
+
+Turn 388
+================================================================
+warning: owned entities 59, 64 collided on cell (23, 16) as the result of moves on this turn
+At command 5 of 9:
+    3   m 83 e
+    4   m 80 w
+>>> 5   m 59 e
+    6   m 22 w
+    7   m 84 e
+
+
+Turn 394
+================================================================
+warning: owned entities 14, 36 collided on cell (23, 16) as the result of moves on this turn
+At command 1 of 7:
+>>> 1   m 14 w
+    2   m 84 e
+    3   m 82 w
+
+
+Turn 396
+================================================================
+warning: owned entities 82, 83 collided on cell (23, 16) as the result of moves on this turn
+At command 2 of 5:
+    1   m 84 s
+>>> 2   m 82 s
+    3   m 80 w
+    4   m 22 w
+
+
+Turn 398
+================================================================
+warning: owned entities 84, 22 collided on cell (23, 16) as the result of moves on this turn
+At command 1 of 3:
+>>> 1   m 84 s
+    2   m 22 o
+    3   m 80 w
+
