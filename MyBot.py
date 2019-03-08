@@ -7,7 +7,6 @@ def main():
     # This library allows you to generate random numbers.
 
     import numpy as np
-    import common
     from datetime import datetime
     import debug_common
 
