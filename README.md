@@ -12,8 +12,10 @@ To run the code, copy the repo and run one of the "run_game_x.sh" scripts, or on
 The replay file will be saved out to the replays/ directory. You can watch the video at:
 https://2018.halite.io/watch-games
 
-## Strategy
-A zonal strategy was used to help coordinate the bots when navigating across the map. Each map was divided into 4x4 zones. Each turn a summary of each zone was calculated that helped describe it, such as, total halite, halite adjusted across local zones, presence of my ships to the local area, presence of enemy ships to local area, etc.
+## Zonal Strategy
+A zonal strategy was used to help coordinate the bots when navigating across the map. Each map was divided into 4x4 zones. Each turn a summary of each zone was calculated that helped describe it, there were summaries such as total halite, halite adjusted across local zones, presence of my ships to the local area, presence of enemy ships to local area, etc.
+
+This was a relatively simple way of ensuring the ships were inclined towards high value areas, while considering the time it takes to get there and also considering the reduced potential value of highly allocated areas.
 
 ## Walkthrough of script
 A class called Coordinator was used to initialise  the Zone objects. 
@@ -29,6 +31,8 @@ Potential Dropoffs were calculated, given a certain set of conditions of the gam
 If there is a potential Dropoff, each turn we check if we should still create a dropoff there. Sometimes a good place is found, but by the time we are ready to place a dropoff, an enemy has already crowded the area and it wouldn't be as valuable to take.
 
 The "preferred directions" of travel for each ship is now calculated, the choice of method depends on wether the ship was looking to harvest halite, or move to a zone/back to base. If harvesting halite, a refined set of all the possible commands over the next 6 moves were considered. (Each ship can stay still or move north, east, south or west). If moving to a target square then the next 4 moves were considered, the path of least resistance in the least possible moves was calculated. This allows us to consider enemy ships as an obstacle and prevents ships getting "stuck" behind an enemy ship. One or two preferred moves were created for each ship.
+
+When a ship is at a dropoff, its mission and target zone is reset. The coordinator allocates it a new zone and it makes its way there. If it finds an area of high value before it gets there the mission changes to harvest and the Zone is changed. If it makes its way to the target zone its mission also changes to harvest. Initially when a ship reached its allocated Zone it was programmed to stay within that zone, I found that it worked better if the Zones score was a broader representation including zones around it and the ship was allowed to search for fastest halite regardless of zone.
 
 Next each ship's preferred move is considered, first if two ships are swapping positions the command is written and they are checked off. Each ship's command is attempted 7 times in total, sometimes resorting to their second choice move.
 
