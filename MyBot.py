@@ -31,7 +31,7 @@ def main():
     coordinator.generate_game_plan(game, logging)
     enemy_monitor = EnemyMonitor(game)
 
-    game.ready("csmyu_v20")
+    game.ready("csmyu_v25")
 
     # logging.info("Successfully created bot! My Player ID is {}.".format(game.my_id))
 
